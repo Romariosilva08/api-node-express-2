@@ -17,9 +17,9 @@ class ErroBase extends Error {
     //obtendo o status da resposta
     // O método enviarResposta recebe um objeto de resposta (res) como parâmetro
     // O método envia uma resposta JSON com o status e a mensagem de erro
-    res.status(this.status).json({
+    res.status(this.status).send({
+      mensagem: this.message,
       status: this.status,
-      message: this.message
     });
   }
 }
